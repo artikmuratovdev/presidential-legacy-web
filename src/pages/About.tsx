@@ -31,27 +31,31 @@ const About = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-display font-bold text-center text-foreground mb-12">Our Story</h2>
-              <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
-                <p>
-                  The Presidential School of Uzbekistan was established in 2010 with a vision to create 
-                  an educational institution that would set new standards for academic excellence in the region. 
-                  Since our inception, we have been committed to nurturing brilliant minds and preparing students 
-                  for success in an increasingly complex global landscape.
-                </p>
-                <p>
-                  Our school combines the best of traditional academic rigor with innovative teaching methods, 
-                  ensuring that our students receive a well-rounded education that prepares them for the challenges 
-                  of the 21st century. We believe in fostering critical thinking, creativity, and leadership skills 
-                  alongside academic achievement.
-                </p>
-                <p>
-                  Today, we stand proud as one of the leading educational institutions in Central Asia, with a 
-                  track record of producing exceptional graduates who have gone on to excel in prestigious 
-                  universities and make meaningful contributions to society.
-                </p>
-              </div>
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-4xl font-display font-bold text-foreground mb-6">Our Story</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                Since 2010, we've been creating a nurturing environment where young minds flourish, 
+                combining academic excellence with warmth, care, and inspiration.
+              </p>
+            </div>
+            
+            {/* Visual Timeline/Collage */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-16">
+              {[
+                { emoji: "🏫", label: "Modern Campus" },
+                { emoji: "👨‍🏫", label: "Expert Teachers" },
+                { emoji: "🎓", label: "Global Success" },
+                { emoji: "🌟", label: "Excellence" },
+              ].map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="aspect-square bg-gradient-to-br from-primary/10 to-royal-blue/10 rounded-2xl shadow-lg hover:shadow-xl transition-all flex flex-col items-center justify-center p-6 animate-fade-in"
+                  style={{ animationDelay: `${idx * 0.1}s` }}
+                >
+                  <span className="text-5xl mb-3">{item.emoji}</span>
+                  <p className="text-sm font-medium text-foreground text-center">{item.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -65,8 +69,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To provide world-class education that empowers students to become innovative leaders, 
-                  critical thinkers, and responsible global citizens.
+                  Empowering students to become confident leaders and compassionate global citizens.
                 </p>
               </div>
 
@@ -76,8 +79,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be recognized as the premier educational institution in Central Asia, 
-                  setting the standard for academic excellence and innovation.
+                  A premier institution where every child reaches their full potential in a caring community.
                 </p>
               </div>
 
@@ -87,8 +89,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Values</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Excellence, integrity, innovation, diversity, and a commitment to continuous 
-                  improvement in all aspects of education.
+                  Excellence, integrity, kindness, and respect in everything we do.
                 </p>
               </div>
             </div>

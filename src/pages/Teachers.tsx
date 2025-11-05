@@ -120,31 +120,35 @@ const Teachers = () => {
                   className="bg-card rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group animate-fade-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="bg-gradient-to-br from-primary to-royal-blue h-32 relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-primary to-royal-blue h-48 relative overflow-hidden group-hover:h-32 transition-all duration-300">
                     <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-transparent group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="p-6 -mt-12">
-                    <div className="bg-card w-24 h-24 rounded-full border-4 border-card shadow-lg flex items-center justify-center mb-4">
-                      <span className="text-3xl font-display font-bold text-primary">
+                  <div className="p-6 -mt-16">
+                    <div className="bg-card w-32 h-32 rounded-full border-4 border-card shadow-lg flex items-center justify-center mb-4 group-hover:w-20 group-hover:h-20 transition-all">
+                      <span className="text-4xl font-display font-bold text-primary group-hover:text-2xl transition-all">
                         {teacher.name.split(" ").map((n) => n[0]).join("")}
                       </span>
                     </div>
                     <h3 className="text-2xl font-display font-bold text-card-foreground mb-1">
                       {teacher.name}
                     </h3>
-                    <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                    <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                       {teacher.subject}
                     </div>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">{teacher.bio}</p>
-                    <div className="flex items-start gap-2 text-sm text-muted-foreground mb-3">
-                      <Award className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
-                      <span>{teacher.awards}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Mail className="h-4 w-4" />
-                      <a href={`mailto:${teacher.email}`} className="hover:text-primary transition-colors">
-                        {teacher.email}
-                      </a>
+                    
+                    {/* Hidden by default, shown on hover */}
+                    <div className="opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-96 overflow-hidden transition-all duration-300 space-y-3">
+                      <p className="text-muted-foreground leading-relaxed">{teacher.bio}</p>
+                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Award className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
+                        <span>{teacher.awards}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Mail className="h-4 w-4" />
+                        <a href={`mailto:${teacher.email}`} className="hover:text-primary transition-colors">
+                          {teacher.email}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

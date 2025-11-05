@@ -95,25 +95,32 @@ const Achievements = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-display font-bold text-center text-foreground mb-16">
-              Recent Achievements
+              Proud Moments
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="bg-card rounded-xl shadow-lg hover:shadow-xl transition-all p-8 group animate-fade-in"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <achievement.icon className={`h-8 w-8 ${achievement.color}`} />
+                  {/* Image placeholder with gradient */}
+                  <div className="aspect-[4/3] bg-gradient-to-br from-primary via-royal-blue to-gold relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <achievement.icon className="h-24 w-24 text-white/30 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="absolute top-4 right-4 bg-gold text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      {achievement.year}
+                    </div>
                   </div>
-                  <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    {achievement.year}
+                  
+                  {/* Content overlay */}
+                  <div className="bg-card p-6">
+                    <h3 className="text-xl font-display font-bold text-card-foreground mb-2">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">{achievement.description}</p>
                   </div>
-                  <h3 className="text-xl font-display font-bold text-card-foreground mb-3">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">{achievement.description}</p>
                 </div>
               ))}
             </div>
@@ -129,10 +136,8 @@ const Achievements = () => {
               <h2 className="text-3xl font-display font-bold text-card-foreground mb-4">
                 Student Success Stories
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Our students have been accepted to prestigious universities including Harvard, MIT, 
-                Oxford, Cambridge, and leading institutions across Asia and Europe. Their achievements 
-                in academics, sports, arts, and community service continue to inspire future generations.
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Our graduates shine at the world's best universities, making us incredibly proud.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="bg-primary/10 px-6 py-3 rounded-full">

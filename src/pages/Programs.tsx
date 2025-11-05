@@ -63,39 +63,29 @@ const Programs = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
               <h2 className="text-4xl font-display font-bold text-foreground mb-6">
-                Our Curriculum
+                Learning Paths for Every Passion
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Our educational programs are designed to provide students with a well-rounded education 
-                that combines academic rigor with practical skills. We offer specialized tracks that allow 
-                students to pursue their passions while maintaining excellence across all subjects.
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Discover programs that inspire curiosity and unlock your child's full potential.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {programs.map((program, index) => (
                 <div
                   key={index}
-                  className="bg-card rounded-xl shadow-lg hover:shadow-xl transition-all p-8 animate-fade-in"
+                  className="bg-card rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 text-center group animate-fade-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <program.icon className="h-8 w-8 text-primary" />
+                  <div className="bg-gradient-to-br from-primary/20 to-royal-blue/20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <program.icon className="h-10 w-10 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">
+                  <h3 className="text-xl font-display font-bold text-card-foreground mb-2">
                     {program.title}
                   </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {program.description}
+                  <p className="text-sm text-muted-foreground">
+                    {program.description.split('.')[0]}
                   </p>
-                  <div className="space-y-2">
-                    {program.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               ))}
             </div>
@@ -104,35 +94,22 @@ const Programs = () => {
 
         <section className="py-20 bg-gradient-to-br from-primary/5 via-secondary/30 to-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-2xl p-12">
-              <h2 className="text-3xl font-display font-bold text-center text-card-foreground mb-8">
-                Program Goals
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-3xl font-display font-bold text-foreground mb-12">
+                What Your Child Will Gain
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-card-foreground">Academic Excellence</h3>
-                  <p className="text-muted-foreground">
-                    Maintain high academic standards while fostering critical thinking and problem-solving skills.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-card-foreground">Global Competence</h3>
-                  <p className="text-muted-foreground">
-                    Prepare students for success in an increasingly interconnected and diverse world.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-card-foreground">Character Development</h3>
-                  <p className="text-muted-foreground">
-                    Cultivate integrity, responsibility, and ethical leadership in all students.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-card-foreground">Innovation & Creativity</h3>
-                  <p className="text-muted-foreground">
-                    Encourage innovative thinking and creative problem-solving across all disciplines.
-                  </p>
-                </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { emoji: "🎯", label: "Excellence" },
+                  { emoji: "🌍", label: "Global Skills" },
+                  { emoji: "❤️", label: "Character" },
+                  { emoji: "💡", label: "Creativity" },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-card p-6 rounded-2xl shadow-lg">
+                    <div className="text-5xl mb-3">{item.emoji}</div>
+                    <p className="font-semibold text-card-foreground">{item.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

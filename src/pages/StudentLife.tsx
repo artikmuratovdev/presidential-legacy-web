@@ -58,12 +58,10 @@ const StudentLife = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
               <h2 className="text-4xl font-display font-bold text-foreground mb-6">
-                Beyond the Classroom
+                Happy Students, Bright Futures
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Student life at our school is rich with opportunities for personal growth, leadership development, 
-                and community engagement. From clubs and sports to cultural events and volunteer work, 
-                there's something for everyone.
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                A vibrant community where friendships bloom and passions are discovered.
               </p>
             </div>
           </div>
@@ -156,13 +154,21 @@ const StudentLife = () => {
                 <h2 className="text-4xl font-display font-bold text-foreground">Campus Gallery</h2>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
+                {[
+                  { emoji: "🎨", label: "Art & Creativity" },
+                  { emoji: "⚽", label: "Sports Day" },
+                  { emoji: "🎭", label: "Drama Club" },
+                  { emoji: "🔬", label: "Science Fair" },
+                  { emoji: "🎵", label: "Music Concert" },
+                  { emoji: "🌍", label: "Field Trips" },
+                ].map((item, i) => (
                   <div
                     key={i}
-                    className="aspect-square bg-gradient-to-br from-primary/20 to-royal-blue/20 rounded-xl shadow-lg hover:shadow-xl transition-all animate-fade-in flex items-center justify-center"
+                    className="aspect-square bg-gradient-to-br from-primary/10 to-royal-blue/10 rounded-2xl shadow-lg hover:shadow-2xl transition-all animate-fade-in flex flex-col items-center justify-center p-6 group cursor-pointer"
                     style={{ animationDelay: `${i * 0.1}s` }}
                   >
-                    <span className="text-6xl text-primary/30">📸</span>
+                    <span className="text-6xl mb-3 group-hover:scale-110 transition-transform">{item.emoji}</span>
+                    <p className="text-sm font-medium text-foreground text-center">{item.label}</p>
                   </div>
                 ))}
               </div>

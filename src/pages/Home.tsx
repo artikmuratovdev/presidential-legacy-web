@@ -27,16 +27,14 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-                Welcome to Presidential School
+                Where Excellence Begins
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                We are committed to providing world-class education that combines academic excellence 
-                with character development, innovation, and leadership skills. Our mission is to nurture 
-                the brightest minds and prepare them for a successful future.
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Nurturing brilliant minds in a warm, inspiring environment where every child's potential is celebrated.
               </p>
               <Link to="/about">
                 <Button size="lg" className="group">
-                  Learn More About Us
+                  Explore Our School
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

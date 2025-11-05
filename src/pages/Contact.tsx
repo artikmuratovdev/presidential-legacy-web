@@ -171,15 +171,23 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 bg-card rounded-xl shadow-lg p-6">
-                  <h3 className="font-display font-semibold text-lg text-card-foreground mb-4">
-                    Visit Our Campus
+                <div className="mt-8 bg-card rounded-xl shadow-lg overflow-hidden">
+                  <h3 className="font-display font-semibold text-lg text-card-foreground mb-4 p-6 pb-0">
+                    Find Us on the Map
                   </h3>
-                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-royal-blue/20 rounded-lg flex items-center justify-center">
-                    <span className="text-4xl">🗺️</span>
+                  <div className="aspect-video">
+                    <iframe
+                      src="https://yandex.com/map-widget/v1/?ll=69.240562,41.311151&z=12&l=map"
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      allowFullScreen
+                      title="School Location"
+                      className="rounded-b-lg"
+                    />
                   </div>
-                  <p className="text-sm text-muted-foreground mt-4">
-                    Schedule a campus tour to experience our facilities firsthand
+                  <p className="text-sm text-muted-foreground p-6 pt-4">
+                    Visit us to experience our welcoming campus
                   </p>
                 </div>
               </div>
