@@ -1,6 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, Calendar, Newspaper, Heart } from "lucide-react";
+import studentLifeHero from "@/assets/student-life-hero.jpg";
+import campus1 from "@/assets/campus-1.jpg";
+import campus2 from "@/assets/campus-2.jpg";
+import campus3 from "@/assets/campus-3.jpg";
+import campus4 from "@/assets/campus-4.jpg";
+import campus5 from "@/assets/campus-5.jpg";
+import campus6 from "@/assets/campus-6.jpg";
 
 const clubs = [
   { name: "Science Club", members: "45+ members", description: "Exploring the wonders of science through experiments" },
@@ -41,9 +48,14 @@ const StudentLife = () => {
     <div className="min-h-screen">
       <Navbar />
       <main className="pt-20">
-        <section className="py-20 bg-gradient-to-br from-primary via-primary/90 to-royal-blue">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center animate-fade-in">
+        <section className="relative h-[500px] overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${studentLifeHero})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+          <div className="container mx-auto px-4 h-full flex items-center relative z-10">
+            <div className="max-w-4xl animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-display font-bold text-primary-foreground mb-6">
                 Student Life
               </h1>
@@ -155,20 +167,26 @@ const StudentLife = () => {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[
-                  { emoji: "🎨", label: "Art & Creativity" },
-                  { emoji: "⚽", label: "Sports Day" },
-                  { emoji: "🎭", label: "Drama Club" },
-                  { emoji: "🔬", label: "Science Fair" },
-                  { emoji: "🎵", label: "Music Concert" },
-                  { emoji: "🌍", label: "Field Trips" },
+                  { image: campus1, label: "Outdoor Study" },
+                  { image: campus2, label: "Library" },
+                  { image: campus3, label: "Science Lab" },
+                  { image: campus4, label: "Arts & Music" },
+                  { image: campus5, label: "Sports" },
+                  { image: campus6, label: "Cafeteria" },
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="aspect-square bg-gradient-to-br from-primary/10 to-royal-blue/10 rounded-2xl shadow-lg hover:shadow-2xl transition-all animate-fade-in flex flex-col items-center justify-center p-6 group cursor-pointer"
+                    className="aspect-square rounded-2xl shadow-lg hover:shadow-2xl transition-all animate-fade-in overflow-hidden group cursor-pointer relative"
                     style={{ animationDelay: `${i * 0.1}s` }}
                   >
-                    <span className="text-6xl mb-3 group-hover:scale-110 transition-transform">{item.emoji}</span>
-                    <p className="text-sm font-medium text-foreground text-center">{item.label}</p>
+                    <img 
+                      src={item.image} 
+                      alt={item.label}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+                      <p className="text-white font-semibold text-lg">{item.label}</p>
+                    </div>
                   </div>
                 ))}
               </div>

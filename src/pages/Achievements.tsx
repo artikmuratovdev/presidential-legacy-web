@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Trophy, Medal, Award, Star, Target, Zap } from "lucide-react";
+import achievementsHero from "@/assets/achievements-hero.jpg";
 
 const achievements = [
   {
@@ -59,9 +60,14 @@ const Achievements = () => {
     <div className="min-h-screen">
       <Navbar />
       <main className="pt-20">
-        <section className="py-20 bg-gradient-to-br from-primary via-primary/90 to-royal-blue">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center animate-fade-in">
+        <section className="relative h-[500px] overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${achievementsHero})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+          <div className="container mx-auto px-4 h-full flex items-center relative z-10">
+            <div className="max-w-4xl animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-display font-bold text-primary-foreground mb-6">
                 Our Achievements
               </h1>

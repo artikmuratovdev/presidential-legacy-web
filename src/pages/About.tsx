@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Target, Eye, Award } from "lucide-react";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const milestones = [
   { year: "2010", title: "Foundation", description: "Presidential School of Uzbekistan was established" },
@@ -16,9 +17,14 @@ const About = () => {
     <div className="min-h-screen">
       <Navbar />
       <main className="pt-20">
-        <section className="py-20 bg-gradient-to-br from-primary via-primary/90 to-royal-blue">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center animate-fade-in">
+        <section className="relative h-[500px] overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${aboutHero})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+          <div className="container mx-auto px-4 h-full flex items-center relative z-10">
+            <div className="max-w-4xl animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-display font-bold text-primary-foreground mb-6">
                 About Our School
               </h1>
